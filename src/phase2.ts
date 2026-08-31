@@ -10,7 +10,7 @@ export function feedCatalog(){return [
 {id:'maritime',label:'MARITIME / AIS',status:'adapter-ready'},
 {id:'fire',label:'FIRE / FIRMS',status:'adapter-ready'},
 {id:'disaster',label:'DISASTERS / GDACS',status:'adapter-ready'},
-{id:'cyber',label:'CYBER / IOCS',status:'adapter-ready'},
+{id:'cyber',label:'CYBER / IOCs',status:'adapter-ready'},
 {id:'military',label:'MILITARY / SECURITY',status:'adapter-ready'},
 {id:'infrastructure',label:'CRITICAL INFRASTRUCTURE',status:'adapter-ready'},
 {id:'satellite',label:'SATELLITE / GPS',status:'adapter-ready'}] as const;}
