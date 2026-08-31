@@ -1,15 +1,20 @@
 # LatIn Monitor
 
-India + Latvia situational-awareness dashboard inspired by the information architecture of modern open-source intelligence monitors.
+Focused real-time situational-awareness dashboard for **India + Latvia**, benchmarked against the depth and interaction model of World Monitor while remaining an independent implementation.
 
-## Current build
-- India / Latvia country switcher
-- Dark operations dashboard UI
-- Country risk snapshot and component metrics
-- Map theater with layer toggles
-- Event stream and severity labels
-- Time-window controls
-- Responsive mobile layout
+## v0.2 shipped
+- Real MapLibre GL map using OpenFreeMap tiles
+- India / Latvia theater switching with automatic fly-to
+- Flat map + globe projection toggle
+- Zoom, locate and navigation controls
+- 16 layer controls across situation, security, flow, infrastructure, physical and space categories
+- Country risk snapshot with six component signals and deltas
+- Correlation engine panel for cross-signal reasoning
+- 1h / 6h / 24h / 48h / 7d time windows
+- Severity-coded event stream with source labels
+- Command palette (`⌘K` / `Ctrl-K` style UI) for rapid navigation
+- Responsive operations-room layout for mobile
+- Public-source attribution language and non-classified positioning
 
 ## Run
 ```bash
@@ -17,16 +22,19 @@ npm install
 npm run dev
 ```
 
-## Roadmap
-1. MapLibre/deck.gl live map
-2. OpenStreetMap infrastructure layers
-3. NASA EONET/FIRMS, USGS and GDACS natural events
-4. GDELT/RSS news ingestion
-5. OpenSky aviation and AIS maritime feeds where permitted
-6. India/Latvia public security datasets
-7. Economic indicators and market radar
-8. Transparent risk scoring
-9. AI country briefs with provider/local fallback
-10. PWA, caching, alerts and historical playback
+## Benchmark
+World Monitor is used as the product benchmark for map interaction, progressive intelligence panels, correlation-oriented presentation, country dossiers, event timelines and operational density. Its public site currently describes 56 map layers, 500+ curated feeds and 528+ providers. See https://www.worldmonitor.app/ and its open-source repository for reference.
 
-Data will be source-attributed and public-source only. This is an independent implementation and does not copy proprietary World Monitor code or branding.
+## Next build phases
+1. Live USGS earthquake + Open-Meteo weather adapters
+2. GDELT/RSS news ingestion with source/time normalization
+3. OpenSky aviation and AIS maritime adapters where access permits
+4. NASA FIRMS / EONET / GDACS natural-event adapters
+5. India/Latvia infrastructure and public-security datasets
+6. Market radar for INR/EUR exposure, equities, energy and commodities
+7. Transparent risk-scoring pipeline with historical baselines
+8. AI country briefs with citations and local-model fallback
+9. Watchlists, alert rules, historical playback and PWA caching
+10. Server-side API layer for secrets, rate limits, normalization and feed health
+
+All intelligence data should be source-attributed. This project does not copy proprietary World Monitor code or branding.
