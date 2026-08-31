@@ -1,0 +1,4 @@
+export type Signal={source:string;kind:string;severity:'HIGH'|'MEDIUM'|'LOW'|'INFO';time:string;lat?:number;lon?:number};
+export function riskScore(signals:Signal[]){const now=Date.now();const recent=signals.filter(s=>now-Date.parse(s.time)<7*864e5);const weighted=recent.reduce((n,s)=>n+(s.severity==='HIGH'?12:s.severity==='MEDIUM'?6:s.severity==='LOW'?2:1),0);return Math.min(100,20+weighted)}
+export function correlations(signals:Signal[]){const recent=signals.filter(s=>Date.now()-Date.parse(s.time)<864e5);const kinds=[...new Set(recent.map(s=>s.kind))];return kinds.length>=3?{score:Math.min(100,30+kinds.length*12),kinds,confidence:Math.min(.95,.45+kinds.length*.1)}:null}
+export function focalPoints(signals:Signal[]){const cells=new Map<string,number>();for(const s of signals)if(s.lat!=null&&s.lon!=null){const k=`${s.lat.toFixed(1)},${s.lon.toFixed(1)}`;cells.set(k,(cells.get(k)||0)+1)}return [...cells.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10)}
